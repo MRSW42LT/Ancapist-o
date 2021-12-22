@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+<title>{% block title %}Registrar-se{% endblock %}</title>
+
+
+    {% block main %}
+    <main>
+        <div class="container-sm auth-form mt-5 mb-5">
+            <form method="POST">
+                <h2 class="text-center mb-5">Registre-se</h2>
+                <!-- Email input -->
+                <div class="form-outline mb-4">
+                    <input
+                    type="email"
+                    class="form-control"
+                    id="email" name="email"
+                />
+                  <label class="form-label" for="form2Example1">Endereço de email</label>
+                </div>
+
+                <!-- Usuario input -->
+                <div class="form-outline mb-4">
+                    <input
+                    type="username"
+                    class="form-control"
+                    id="username" name="username"
+                />
+                  <label class="form-label" for="form2Example1">Nome de usuário</label>
+                </div>
+              
+                <!-- Password input -->
+                <div class="form-outline mb-4">
+                    <input
+                    type="password"
+                    class="form-control"
+                    id="password1" name="password1"
+                />
+                  <label class="form-label" for="form2Example2">Senha</label>
+                </div>
+
+                <!-- Password confirm input -->
+                <div class="form-outline mb-4">
+                    <input
+                    type="password"
+                    class="form-control"
+                    id="password2" name="password2"
+                />
+                  <label class="form-label" for="form2Example2">Confirme a senha</label>
+                </div>
+    
+                <div class="text-center">
+                    <p>Tem uma conta? <a href="/login">Faça o login</a></p>
+                </div>
+              
+                <!-- Submit button -->
+                <button type="submit" class="btn btn-warning btn-block mb-4">Registrar-se</button>
+              </form>
+              <div class="mt-5">
+                <p>Não compartilharemos seu e-mail com ninguém.</p>
+                <p>Apenas seu nome de usuário será público.</p>
+                <p>Não enviamos e-mails em massa.</p>
+                <p>Sua senha será armazenada em criptografia sha256.</p>
+              </div>
+        </div>
+
+    </main>
+    {% endblock %}

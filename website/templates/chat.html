@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+<title>{% block title %}Chat - {{user.username}}{% endblock %}</title>
+
+{% block main %}
+
+{{ ckeditor.load() }}
+
+<div class="container mt-5 mb-5">
+    <div class="container-fluid border bg-chatbackground">
+        <div class="p-3">
+            <div class="vh-100 overflow-auto messages-container">
+                <ul id="some-ul" class="list-unstyled">
+                  {% for row in rowsMensagem  %}
+                    <li class="d-flex justify-content-start mb-2">
+                      <div class="chat-body white ml-1 z-depth-1 bg-darkblue rounded-5 text-white">
+                        <strong class="font-small">{{row[1]}}</strong><br>
+                        <small>{{row[0]|safe}}</small>
+                      </div>
+                    </li>
+                  {% endfor %}
+                </ul>
+            </div>
+
+            <form method="POST" id="chat-form">
+              <div class="form-group basic-textarea">
+                <textarea class="form-control pl-2 my-0 bg-darkblue text-white border-0" name="ckeditor" placeholder="Digite sua mensagem..." id="chat-message-input"></textarea>
+                <button id="send-msg" type="submit" class="btn btn-warning btn-sm waves-effect waves-light float-right mt-1">Enviar mensagem - {{user.username}}</button>
+              </div>
+            </form>
+
+            {{ ckeditor.load() }}
+            {{ ckeditor.config(name='ckeditor') }}
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

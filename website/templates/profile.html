@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+<title>{% block title %}Perfil{% endblock %}</title>
+
+{% block main %}
+
+<div class="container mt-5">
+
+    <h1>Seu perfil</h1><hr>
+    <div class="row mt-5 mb-10">
+        <div class="col-6">
+            <div class="row">
+                <div class="col-3">
+                    <i class="fas fa-user big-icon"></i>
+                </div>
+                <div class="col-9">
+                    <h3>{{ user.username }}</h3>
+                    <a type="button" href="{{url_for('auth.logout')}}" class="btn btn-link px-3 me-2">
+                        <i class="fas fa-sign-out-alt"></i>Sair da minha conta
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-6"></div>
+    </div>
+</div>
+
+{% endblock %}

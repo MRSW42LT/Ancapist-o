@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+<title>{% block title %}Entrar{% endblock %}</title>
+
+<main>
+    {% block main %}
+
+    <div class="container-sm auth-form mt-5 mb-12">
+        <form method="POST">
+            <h2 class="text-center mb-5">Entrar</h2>
+            <!-- Email input -->
+            <div class="form-outline mb-4">
+                <input
+                type="email"
+                class="form-control"
+                id="email" name="email"
+            />
+              <label class="form-label" for="form2Example1">Endereço de email</label>
+            </div>
+          
+            <!-- Password input -->
+            <div class="form-outline mb-4">
+                <input
+                type="password"
+                class="form-control"
+                id="password" name="password"
+            />
+              <label class="form-label" for="form2Example2">Senha</label>
+            </div>
+
+            <div class="text-center">
+                <p>Ainda não é um membro? <a href="/sign_up">Registre-se</a></p>
+            </div>
+          
+            <!-- Submit button -->
+            <button type="submit" class="btn btn-warning btn-block mb-4">Entrar</button>
+          </form>
+    </div>
+    
+    {% endblock %}
+</main>
